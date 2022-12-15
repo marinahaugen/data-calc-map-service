@@ -4,8 +4,7 @@
 - Delete variables once done using it (e.g. groupBy makes copy)
 - Don't bother calculate for coords that are invlaid (e.g. corrds on land)
 - Use Dask to split the datasets in chunks and you can do parallel computations. Dask delayed. Lazy evaluation. Dask represents deferred computations as graphs
-- Or use Local or cloud SQL database
-- Use ds.groupby('time.day') so we can use the function already made ("split apply combine operations")
+- Use ds.groupby('time.day') so we can use the function already made ("split apply combine operations"). If possible the best solution qould be to group by the entire dataset time. E.g if we have data from 30 years, use 30 years as grouping. 
 - Store max per day in a Max Heap datastructure. The lookup time T(0) = O(1). Or store max at index (?)
 
 ## More on using Dask
