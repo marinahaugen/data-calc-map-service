@@ -1,11 +1,10 @@
-import Map from './Map';
-
+import Map from "./Map";
 
 function App() {
 
   return (
     <div>
-      <Map/>
+      <Map />
     </div>
   );
 }
