@@ -12,4 +12,8 @@
 - Blocking arrays into small chunks and executing on those chunks in parallel.
 - It allows xarray to easily process large data and also simultaneously make use of all of our CPU resources.
 
+## Start client side
+`npm start` in the client folder
 
+## Start server side
+`python3 server.py` in the server folder

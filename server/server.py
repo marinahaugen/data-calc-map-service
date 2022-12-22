@@ -1,21 +1,18 @@
-from flask import Flask
-from findHmax import findHmax
+from flask import Flask, jsonify, request
+import calcWaves
 
-app = Flask(__name__)
-dbSet = set() # (lng, lat, hmax)
+app = Flask(__name__) #define app using Flask
 
-
-@app.route("/hmax", methods=["POST"])
-def createHmaxCalc(lng, lat):
-  lng = request.args.get("lng")
-  lat = request.args.get("lat")
-  hmax = findHmax(lng, lat)
-  return dbSet.add({lng, lat, hmax}, )
+@app.route("/")
+def root():
+  return "A web app to calc wave hight on clicked coordinates"
 
 @app.route("/hmax", methods=["GET"])
-def getHmaxCalc():
-  return dbSet
+def getHmaxByCoords():
+  longitude = request.args["lng"]
+  latitude = request.args["lat"]
+  calc_hmax = calcWaves.findHmax(longitude, latitude)
+  return jsonify(calc_hmax)
 
-
-if __name__ == "__main__":
+if __name__ == "__main__": #run app in debug mode
   app.run(debug=True)
