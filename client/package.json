@@ -2,30 +2,29 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "main": "app.js",
   "proxy": "http://127.0.0.1:5000",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@babel/core": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.7.3",
+    "dotenv-webpack": "^8.0.1",
     "eslint-plugin-html": "^7.1.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "mapbox-gl": "^2.11.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "webpack",
+    "serve": "webpack-dev-server --mode=development",
+    "deploy": "npm run build"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
     "plugins": [
       "html"
     ]
