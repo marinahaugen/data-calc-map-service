@@ -1,7 +1,7 @@
 import "./styles.css";
-import mapboxgl from './node_modules/mapbox-gl/dist/mapbox-gl.js';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
+const mapboxgl = require('mapbox-gl');
 mapboxgl.accessToken = process.env.ACCESS_TOKEN;
 
 function getHmaxByCoordsHandler(longitude, latitude) {
