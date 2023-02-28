@@ -37,7 +37,7 @@ module.exports = {
   devServer: {
     static: "./",
     open: true,
-    port: 3000,
+    port: 5000,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
